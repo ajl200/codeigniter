@@ -16,8 +16,14 @@ class modelUser extends CI_Model {
            $row = $query->result_array();
            $id = $row[0]['id'];
         }
+
+        $session_data = array('idUsr' => $id);
+        $this->session->set_userdata($session_data);
+
         return $id;
     }
+
+
 }
  
 /* en autoload helper 

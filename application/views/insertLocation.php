@@ -26,3 +26,5 @@
 echo       "<label for='fotografia'> Fotografia: </label> <input type='file' name='fotografia'> </br>
             <input type='submit' value='Insertar'>
             </form>";
+
+echo anchor('Users/showMenu','Volver al menu');

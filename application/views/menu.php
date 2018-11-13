@@ -43,6 +43,7 @@
             echo anchor('Locations/viewInsert','Insertar Localizacion');
            
     echo "</div>";
-    
-echo "</div>";
+
+    echo anchor('Users/index','Logout');
+    echo "</div>";
 

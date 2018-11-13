@@ -9,3 +9,5 @@
             <input type='hidden' name='id' value=". $placeData['id'] ." >
             <input type='submit' value='Aceptar'>
     </form>";
+
+    echo anchor('Users/showMenu','Volver al menu');

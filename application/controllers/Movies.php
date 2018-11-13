@@ -17,11 +17,14 @@ include ('Security.php');
     }
 
     public function viewInsert(){
+     if ($this->compruebaLogin()){
         $data["nombreVista"] = "insertMovie";
         $this->load->view('templates', $data);
+     }
     }
 
     public function insert(){
+        if ($this->compruebaLogin()){
         $this->load->model('modelPeliculas');
         $img_name = $this->modelPeliculas->checkImg();
         $nombre = $this->input->get_post('nombre');
@@ -59,17 +62,20 @@ include ('Security.php');
 
                         $data["nombreVista"] = "menu";
                         $this->load->view('templates', $data);
+            }
         }
-    }
-
+    }   
     public function viewUpdate($id){
+        if ($this->compruebaLogin()){
         $data["nombreVista"] = "updateMovie";
         $this->load->model('modelPeliculas');
         $data["movieData"] = $this->modelPeliculas->get($id);
         $this->load->view('templates', $data);
+        }
     }
 
     public function update(){
+        if ($this->compruebaLogin()){
         $this->load->model('modelPeliculas');
         $titulo = $this->input->get_post('titulo');
         $anyo = $this->input->get_post('anyo');
@@ -117,11 +123,13 @@ include ('Security.php');
 
                         $data["nombreVista"] = "menu";
                         $this->load->view('templates', $data);
+            }
         }
     }
 
 // le paso el id por el anchor.
     public function delete($id){
+        if ($this->compruebaLogin()){
         $this->load->model('modelPeliculas');
         $r = $this->modelPeliculas->delete($id);
 
@@ -153,6 +161,7 @@ include ('Security.php');
 
                         $data["nombreVista"] = "menu";
                         $this->load->view('templates', $data);
+            }
         }
     }
     

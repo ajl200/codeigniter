@@ -8,12 +8,14 @@ include ('Security.php');
     }
 
     public function viewInsert(){
-        
+        if ($this->compruebaLogin()){
         $data["nombreVista"] = "insertPlace";
         $this->load->view('templates', $data);
+        }
     }
 
     public function insert(){
+        if ($this->compruebaLogin()){
         $this->load->model('modelLugares');
 
         $nombre = $this->input->get_post('nombre');
@@ -51,20 +53,23 @@ include ('Security.php');
 
                         $data["nombreVista"] = "menu";
                         $this->load->view('templates', $data);
+            }
         }
     }
 
     // LE ESTAMOS PASANDO EL id POR EL ANCHOR DE MODIFICAR EN EL menu.php
     public function viewUpdate($id){
+        if ($this->compruebaLogin()){
         $this->load->model('modelLugares');
         $data["placeData"] = $this->modelLugares->get($id);
 
         $data["nombreVista"] = "updatePlace";
         $this->load->view('templates',$data);
-
+        }
     }
 
     public function update(){
+        if ($this->compruebaLogin()){
         $id = $this->input->get_post('id');
         $nombre = $this->input->get_post('nombre');
         $descripcion = $this->input->get_post('descripcion');
@@ -102,12 +107,13 @@ include ('Security.php');
 
                         $data["nombreVista"] = "menu";
                         $this->load->view('templates', $data);
+            }
         }
- 
     }
 
 // LE ESTAMOS PASANDO EL id POR EL ANCHOR DE DELETE EN EL menu.php
     public function delete($id){
+        if ($this->compruebaLogin()){
         $this->load->model('modelLugares');
         $r = $this->modelLugares->delete($id);
 
@@ -139,6 +145,7 @@ include ('Security.php');
 
                         $data["nombreVista"] = "menu";
                         $this->load->view('templates', $data);
+            }
         }
     }
 

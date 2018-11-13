@@ -9,7 +9,7 @@
             <label for='cartel'> Cartel: </label> <input type='file' name='cartel' > </br>
             <input type='submit' value='Insertar'>
     </form>";
-
+    echo anchor('Users/showMenu','Volver al menu');
 /* 
 file uploading en codeigniter
 

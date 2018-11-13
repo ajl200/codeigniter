@@ -9,3 +9,5 @@
 
             <input type='submit' value='Insertar'>
         </form>";
+    
+    echo anchor('Users/showMenu','Volver al menu');

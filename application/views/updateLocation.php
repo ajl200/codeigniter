@@ -35,3 +35,5 @@ echo form_open_multipart('Locations/update');
                 <input type='hidden' name='fotografiaDefault' value=". $locationData['fotografia'] ." >
                 <input type='submit' value='Insertar'>
                 </form>";
+                
+    echo anchor('Users/showMenu','Volver al menu');

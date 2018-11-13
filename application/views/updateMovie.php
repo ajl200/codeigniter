@@ -9,6 +9,6 @@
                                          <input type='hidden' name='id' value=". $movieData['id'] ." >
             <input type='submit' value='Aceptar'>
     </form>";
-
-
+    
+    echo anchor('Users/showMenu','Volver al menu');
    // DEFAULT IMAGE ES PARA QUE CUANDO EL USUARIO NO QUIERA CAMBIAR LA IMAGEN, ENVIARÁ LA RUTA DE HIDDEN DEFAULTIMAGE. PORQUE EL TYPE FILE SE RESETEA SIEMPRE...

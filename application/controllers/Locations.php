@@ -8,20 +8,20 @@ include ('Security.php');
     }
 
     public function viewInsert(){
-        $this->load->model('modelPeliculas');
-        $this->load->model('modelLugares');
+        if ($this->compruebaLogin()){
+            $this->load->model('modelPeliculas');
+            $this->load->model('modelLugares');
 
-        $data["placesList"] = $this->modelLugares->getAll();
-        $data["moviesList"] = $this->modelPeliculas->getAll();
-        
-
-        $data["nombreVista"] = "insertLocation";
-        $this->load->view('templates', $data);
-
-
+            $data["placesList"] = $this->modelLugares->getAll();
+            $data["moviesList"] = $this->modelPeliculas->getAll();
+            
+            $data["nombreVista"] = "insertLocation";
+            $this->load->view('templates', $data);
+        }
     }
 
     public function insert(){
+        if ($this->compruebaLogin()){
         $this->load->model('modelLocalizaciones');
         
         $descripcion = $this->input->get_post('descripcion');
@@ -34,7 +34,7 @@ include ('Security.php');
         
         
         $r = $this->modelLocalizaciones->insert($descripcion, $img, $id_lugar, $id_pelicula);
-
+        
         if ($r == 0) {
                 echo "<h4 class='error'> SE HA PRODUCIDO UN ERROR </h4>";
 
@@ -63,11 +63,12 @@ include ('Security.php');
 
                         $data["nombreVista"] = "menu";
                         $this->load->view('templates', $data);
+            }
         }
-
     }
 
         public function viewUpdate($id){
+            if ($this->compruebaLogin()){
             $this->load->model('modelLocalizaciones');
             $this->load->model('modelPeliculas');
             $this->load->model('modelLugares');
@@ -78,9 +79,11 @@ include ('Security.php');
 
             $data["nombreVista"] = "updateLocation";
             $this->load->view('templates', $data);
+            }
     }
 
         public function update(){   
+            if ($this->compruebaLogin()){
             $this->load->model('modelLocalizaciones');
             $id = $this->input->get_post('id');
             $descripcion = $this->input->get_post('descripcion');
@@ -126,11 +129,12 @@ include ('Security.php');
 
                         $data["nombreVista"] = "menu";
                         $this->load->view('templates', $data);
+            }
         }
-
-        }
+    }
 
         public function delete ($id){
+            if ($this->compruebaLogin()){
             $this->load->model('modelLocalizaciones');
 
             $r = $this->modelLocalizaciones->delete($id);
@@ -164,10 +168,6 @@ include ('Security.php');
                         $data["nombreVista"] = "menu";
                         $this->load->view('templates', $data);
         }
-
+    }
         }
-
-
-
-   
 }

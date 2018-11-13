@@ -3,7 +3,9 @@
     class Users extends Security {
     // CARGO LA VISTA LOGIN
         public function index() {
-        $this->load->view('login.php');
+        
+        $data["nombreVista"] = "login";
+        $this->load->view('templates', $data);
     }
 
     // CHECK DEL USUARIO Y LA CONTRASEÑA
@@ -27,8 +29,8 @@
                         $this->load->model('modelLocalizaciones');
                         $data["locationsList"] = $this->modelLocalizaciones->getAll();
 
-                        $data["nombreVista"] = "menu";
-                        $this->load->view('login.php');
+                        $data["nombreVista"] = "login";
+                        $this->load->view('templates', $data);
         } else {
                 echo "<h4 class='success'> Bienvenid@ al menú </h4>";
 
@@ -46,10 +48,23 @@
         }
         }
         
-        public function getAll(){
-            $this->load->view('menu.php');
-            $this->load->model('modelUser');
-        }        
+        public function showMenu(){
+                        if ($this->compruebaLogin()){
+                        $this->load->model('modelPeliculas');
+                        $data["moviesList"] = $this->modelPeliculas->getAll();
+
+                        $this->load->model('modelLugares');
+                        $data["placesList"] = $this->modelLugares->getAll();
+
+                        $this->load->model('modelLocalizaciones');
+                        $data["locationsList"] = $this->modelLocalizaciones->getAll();
+
+                        $data["nombreVista"] = "menu";
+                        $this->load->view('templates', $data);
+            }
+        }
+
+        
     }
 
     /* VER SESSION LIBRARY
