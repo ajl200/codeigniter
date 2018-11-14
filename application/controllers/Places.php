@@ -70,44 +70,44 @@ include ('Security.php');
 
     public function update(){
         if ($this->compruebaLogin()){
-        $id = $this->input->get_post('id');
-        $nombre = $this->input->get_post('nombre');
-        $descripcion = $this->input->get_post('descripcion');
-        $longitud = $this->input->get_post('longitud');
-        $latitud = $this->input->get_post('latitud');
+            $id = $this->input->get_post('id');
+            $nombre = $this->input->get_post('nombre');
+            $descripcion = $this->input->get_post('descripcion');
+            $longitud = $this->input->get_post('longitud');
+            $latitud = $this->input->get_post('latitud');
 
-        $this->load->model('modelLugares');
-        $r = $this->modelLugares->update($id,$nombre,$descripcion,$longitud,$latitud);
+            $this->load->model('modelLugares');
+            $r = $this->modelLugares->update($id,$nombre,$descripcion,$longitud,$latitud);
 
-        if ($r == -1) {
-                echo "<h4 class='error'> SE HA PRODUCIDO UN ERROR </h4>";
-
-                    $this->load->model('modelPeliculas');
-                        $data["moviesList"] = $this->modelPeliculas->getAll();
-
-                        $this->load->model('modelLugares');
-                        $data["placesList"] = $this->modelLugares->getAll();
-
-                        $this->load->model('modelLocalizaciones');
-                        $data["locationsList"] = $this->modelLocalizaciones->getAll();
-
-                        $data["nombreVista"] = "menu";
-                        $this->load->view('templates', $data);
-        } else {
-                echo "<h4 class='success'> SE HA REALIZADO LA OPERACION CON EXITO </h4>";
+            if ($r == -1) {
+                    echo "<h4 class='error'> SE HA PRODUCIDO UN ERROR </h4>";
 
                         $this->load->model('modelPeliculas');
-                        $data["moviesList"] = $this->modelPeliculas->getAll();
+                            $data["moviesList"] = $this->modelPeliculas->getAll();
 
-                        $this->load->model('modelLugares');
-                        $data["placesList"] = $this->modelLugares->getAll();
+                            $this->load->model('modelLugares');
+                            $data["placesList"] = $this->modelLugares->getAll();
 
-                        $this->load->model('modelLocalizaciones');
-                        $data["locationsList"] = $this->modelLocalizaciones->getAll();
+                            $this->load->model('modelLocalizaciones');
+                            $data["locationsList"] = $this->modelLocalizaciones->getAll();
 
-                        $data["nombreVista"] = "menu";
-                        $this->load->view('templates', $data);
-            }
+                            $data["nombreVista"] = "menu";
+                            $this->load->view('templates', $data);
+            } else {
+                    echo "<h4 class='success'> SE HA REALIZADO LA OPERACION CON EXITO </h4>";
+
+                            $this->load->model('modelPeliculas');
+                            $data["moviesList"] = $this->modelPeliculas->getAll();
+
+                            $this->load->model('modelLugares');
+                            $data["placesList"] = $this->modelLugares->getAll();
+
+                            $this->load->model('modelLocalizaciones');
+                            $data["locationsList"] = $this->modelLocalizaciones->getAll();
+
+                            $data["nombreVista"] = "menu";
+                            $this->load->view('templates', $data);
+                }
         }
     }
 
