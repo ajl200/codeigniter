@@ -70,6 +70,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | The $query_builder variables lets you determine whether or not to load
 | the query builder class.
 */
+
+//////////////////////////////////////////////////////
+//***********CONFIGURACION LOCALHOST****************//
+//////////////////////////////////////////////////////
+
+/* 
 $active_group = 'default';
 $query_builder = TRUE;
 
@@ -79,6 +85,36 @@ $db['default'] = array(
 	'username' => 'root',
 	'password' => '',
 	'database' => 'cine',
+	'dbdriver' => 'mysqli',
+	'dbprefix' => '',
+	'pconnect' => FALSE,
+	'db_debug' => (ENVIRONMENT !== 'production'),
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	'stricton' => FALSE,
+	'failover' => array(),
+	'save_queries' => TRUE
+);
+*/
+
+//////////////////////////////////////////////////////
+//**********CONFIGURACION DATABASE******************//
+//////////////////////////////////////////////////////
+
+$active_group = 'default';
+$query_builder = TRUE;
+
+$db['default'] = array(
+	'dsn'	=> '',
+	'hostname' => 'e86803-mysql.services.easyname.eu',
+	'username' => 'u136322db1',
+	'password' => 'lls6m6cea8^xps`y',
+	'database' => 'u136322db1',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

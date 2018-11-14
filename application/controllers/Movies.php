@@ -8,6 +8,8 @@
 // poner ANCHORS para ir hacia atrás
 // ponerlo en el servidor.
 
+// SI NO HAY CONTENIDO DE LA TABLA QUE DIGA QUE NO HAY CONTENIDO, NO UN ERROR.
+
 include ('Security.php');
 
  class Movies extends Security {

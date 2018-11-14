@@ -16,6 +16,7 @@
             $idUsr = -1;
             $idUsr = $this->modelUser->getId($nombre,$passwd);
 
+            var_dump($idUsr);
             if ($idUsr == -1) {
 
                         echo "<h4> Inicie sesión con una contraseña y un usuario válido </h4>";
