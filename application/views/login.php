@@ -1,8 +1,4 @@
 <?php 
-        // si el mensaje de error de security existe, mostrará el error
-        if(isset($error)) echo $error;
-        // se destruye la sesion
-        $this->session->userdata = array();
 
 echo "<div class='container'>";
     echo form_open('Users/check');
@@ -12,4 +8,3 @@ echo "<div class='container'>";
             <input type='submit' value='Inicio'>
     </form>";
 echo "</div>";
-
