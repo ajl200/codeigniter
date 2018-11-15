@@ -1,6 +1,6 @@
 <?php 
         // si el mensaje de error de security existe, mostrará el error
-if(isset($error)) echo $error;
+        if(isset($error)) echo $error;
         // se destruye la sesion
         $this->session->userdata = array();
 

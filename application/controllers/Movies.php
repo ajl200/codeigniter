@@ -1,12 +1,6 @@
 <?php
 
-// poner lo de seguridad en cada controlador.        NO SE SI ESTA CORRECTO???
-// hacer el input de descripcion mas grande.         TEXTAREA ???? 
-// quitar la decoracion de los input de number
-// si no se modifica la imagen, debe coger la ultima. Prueba en Movies.php
 // quitar el index.php
-// poner ANCHORS para ir hacia atrás
-// ponerlo en el servidor.
 
 // SI NO HAY CONTENIDO DE LA TABLA QUE DIGA QUE NO HAY CONTENIDO, NO UN ERROR.
 
@@ -89,6 +83,7 @@ include ('Security.php');
         $id = $this->input->get_post('id');
         $cartel = "assets/img/".$img_name;
 
+        // Si no se ha seleccionado ninguna imagen, cogerá la que hay actualmente. De un campo hidden.
         if (!$img_name){
             $img_name = $this->modelPeliculas->checkImgDefault();
             $cartel = $defaultImage;

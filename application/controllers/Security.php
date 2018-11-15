@@ -1,5 +1,6 @@
 <?php 
 class Security extends CI_Controller {
+
     public function compruebaLogin(){
         $check = false;
         if (!isset($this->session->idUsr)){
@@ -8,6 +9,7 @@ class Security extends CI_Controller {
         } else {
             $check =  true;
         }
+        
         return $check;
     }
 }

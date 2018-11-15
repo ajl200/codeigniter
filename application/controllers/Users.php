@@ -50,21 +50,19 @@
         
         public function showMenu(){
                         if ($this->compruebaLogin()){
-                        $this->load->model('modelPeliculas');
-                        $data["moviesList"] = $this->modelPeliculas->getAll();
+                            $this->load->model('modelPeliculas');
+                            $data["moviesList"] = $this->modelPeliculas->getAll();
 
-                        $this->load->model('modelLugares');
-                        $data["placesList"] = $this->modelLugares->getAll();
+                            $this->load->model('modelLugares');
+                            $data["placesList"] = $this->modelLugares->getAll();
 
-                        $this->load->model('modelLocalizaciones');
-                        $data["locationsList"] = $this->modelLocalizaciones->getAll();
+                            $this->load->model('modelLocalizaciones');
+                            $data["locationsList"] = $this->modelLocalizaciones->getAll();
 
-                        $data["nombreVista"] = "menu";
-                        $this->load->view('templates', $data);
+                            $data["nombreVista"] = "menu";
+                            $this->load->view('templates', $data);
             }
-        }
-
-        
+        } 
     }
 
     /* VER SESSION LIBRARY

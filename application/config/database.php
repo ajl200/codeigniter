@@ -75,7 +75,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //***********CONFIGURACION LOCALHOST****************//
 //////////////////////////////////////////////////////
 
-/* 
+ /*
 $active_group = 'default';
 $query_builder = TRUE;
 
@@ -106,6 +106,7 @@ $db['default'] = array(
 //**********CONFIGURACION DATABASE******************//
 //////////////////////////////////////////////////////
 
+/*
 $active_group = 'default';
 $query_builder = TRUE;
 
@@ -115,6 +116,36 @@ $db['default'] = array(
 	'username' => 'u136322db1',
 	'password' => 'lls6m6cea8^xps`y',
 	'database' => 'u136322db1',
+	'dbdriver' => 'mysqli',
+	'dbprefix' => '',
+	'pconnect' => FALSE,
+	'db_debug' => (ENVIRONMENT !== 'production'),
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	'stricton' => FALSE,
+	'failover' => array(),
+	'save_queries' => TRUE
+);
+*/
+
+////////////////////////////////////
+// CONFIGURACION GEARHOST ////
+// ////////////////////////////////
+
+$active_group = 'default';
+$query_builder = TRUE;
+
+$db['default'] = array(
+	'dsn'	=> '',
+	'hostname' => 'den1.mysql5.gear.host',
+	'username' => 'cine',
+	'password' => 'Ob27bG_M!xD9',
+	'database' => 'cine',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
