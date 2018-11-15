@@ -34,6 +34,8 @@
         } else {
                 echo "<h4 class='success'> Bienvenid@ al menú </h4>";
 
+                        $this->create_session($idUsr);
+                        
                         $this->load->model('modelPeliculas');
                         $data["moviesList"] = $this->modelPeliculas->getAll();
 
