@@ -12,4 +12,19 @@ class Security extends CI_Controller {
         
         return $check;
     }
-}
+
+
+    public function create_session($id) {
+        
+        $session_logued = array('idUsr' => $id);
+        $this->session->set_userdata($session_logued);
+
+    }
+
+    public function destroy_session() {
+
+        $this->session->session_destroy();
+
+    }
+
+    }
