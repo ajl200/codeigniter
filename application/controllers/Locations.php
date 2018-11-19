@@ -4,7 +4,8 @@ include ('Security.php');
  class Locations extends Security {
 
     public function index() {
-        $this->load->view('login.php');
+        $data["nombreVista"] = "login";
+        $this->load->view('templates', $data);
     }
 
     public function viewInsert(){

@@ -9,7 +9,8 @@ include ('Security.php');
  class Movies extends Security {
      // CARGO LA VISTA
     public function index() {
-        $this->load->view('login.php');
+        $data["nombreVista"] = "login";
+        $this->load->view('templates', $data);
     }
 
     public function viewInsert(){
