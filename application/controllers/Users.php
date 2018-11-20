@@ -64,7 +64,18 @@
                             $data["nombreVista"] = "menu";
                             $this->load->view('templates', $data);
             }
-        } 
+        }
+
+        // COMPROBACION AJAX:
+
+        public function checkNombre($nombre) {
+            $this->load->model("modelAjax");
+            $r = $this->modelAjax->checkNombre($nombre);
+            if ($r) // 0 es falso, 1 es true
+                $this->output->set_output("0");
+            else
+                $this->output->set_output("1");
+        }
     }
 
     /* VER SESSION LIBRARY
