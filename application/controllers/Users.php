@@ -8,6 +8,11 @@
         $this->load->view('templates', $data);
     }
 
+    public function cerrarSesion(){
+        $this->destroy_session();
+        $this->index();
+    }
+
     // CHECK DEL USUARIO Y LA CONTRASEÑA
         public function check() {
             $nombre = $this->input->get_post('nombre');

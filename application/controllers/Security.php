@@ -23,8 +23,7 @@ class Security extends CI_Controller {
 
     public function destroy_session() {
 
-        $this->session->session_destroy();
+        $this->session->sess_destroy();
 
     }
-
-    }
+}

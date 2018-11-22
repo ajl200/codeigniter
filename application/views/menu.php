@@ -44,6 +44,6 @@
            
     echo "</div>";
 
-    echo anchor('Users/index','Logout');
+    echo anchor('Users/cerrarSesion','Logout');
     echo "</div>";
 
