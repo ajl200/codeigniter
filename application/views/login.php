@@ -7,7 +7,7 @@
 		var nombre;
 
         nombre = document.getElementById('nombre').value;
-        // alert('/*<     ?     php echo site_url("/Users/checkNombre/");      ?    >' + nombre);
+         alert('/*<     ?     php echo site_url("/Users/checkNombre/");      ?    >' + nombre);
 		peticionHttp.onreadystatechange = showResult;
 		peticionHttp.open('POST', '<?php echo site_url("/Users/checkNombre/");?>' + nombre, true);
 		peticionHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
